@@ -1,4 +1,4 @@
-package com.basiclearningschool;
+package com.drabettygarzon;
 
 import com.facebook.react.ReactActivity;
 import android.os.Bundle;

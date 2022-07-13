@@ -16,7 +16,7 @@ const publicInitialState : PublicState = {
 }
 export const PublicContext = createContext({} as PublicContextProps);
 export const PublicProvider = ({children} : any)=>{
-    const {} = useAudio("longDurationInstrumentalGameLowVolumeCut.mp3");
+    const {} = useAudio("longdurationinstrumentalgamelowvolumecut.mp3");
     const [state, dispatch] = useReducer(publicReducer, publicInitialState);
     useEffect(()=>{
         console.log("entra")

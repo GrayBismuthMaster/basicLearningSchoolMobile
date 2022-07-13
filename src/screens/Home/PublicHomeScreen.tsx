@@ -31,7 +31,7 @@ export const PublicHomeScreen = () => {
             >
                 <View style = {styles.card}>
                     <Image
-                        source={require('../../../assets/Home/lenguaje.png')}
+                        source={require('../../../assets/Home/lenguaje.jpg')}
                         style={styles.cardImage}
                     />
                     <Text style = {styles.cardDescription}>Lenguaje</Text>
@@ -47,7 +47,7 @@ export const PublicHomeScreen = () => {
             >
                 <View style = {styles.card}>
                         <Image
-                            source={require('../../../assets/Home/matematicas.png')}
+                            source={require('../../../assets/Home/matematicas.jpg')}
                             style={styles.cardImage}
                         />
                     <Text style = {styles.cardDescription}>Matemáticas</Text>
@@ -64,7 +64,7 @@ export const PublicHomeScreen = () => {
                 <View style = {styles.card}>
                         <Image
                             // source={{uri : 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'}}
-                            source={require('../../../assets/Home/cienciasNaturales.png')}
+                            source={require('../../../assets/Home/cienciasNaturales.jpg')}
                             style={styles.cardImage}
                         />
                     <Text style = {styles.cardDescription}>Ciencias Naturales</Text>
@@ -80,7 +80,7 @@ export const PublicHomeScreen = () => {
             >
                 <View style = {styles.card}>
                         <Image
-                            source={require('../../../assets/Home/cienciasSociales.png')}
+                            source={require('../../../assets/Home/cienciasSociales.jpg')}
                             style={styles.cardImage}
                         />
                     <Text style = {styles.cardDescription}>Ciencias Sociales</Text>

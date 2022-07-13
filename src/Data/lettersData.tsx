@@ -105,7 +105,7 @@ export const lettersData = [
     },
     {
         id : "27",
-        source : require("../../assets/Home/lettersGame/letterA.png")
+        source : require("../../assets/Home/lettersGame/letterA.jpg")
     }
 ]
 

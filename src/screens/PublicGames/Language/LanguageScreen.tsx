@@ -3,16 +3,16 @@ import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { Dimensions, Image, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from "react-native"
 import { GradientBackground } from "../../../components/GradientBackground"
-import { useAudio } from '../../../hooks/useAudio';
+// import { useAudio } from '../../../hooks/useAudio';
 const widthScreen = Dimensions.get('window').width;
 const heightScreen = Dimensions.get('window').height;
 export const LanguageScreen = () => {
-    const {setNuevoAudio} = useAudio("languageWelcome.mp3");
-    // const [estadoJuego, setEstadoJuego] = useState(false);
+    // const {setNuevoAudio} = useAudio("languageWelcome.mp3");
+    const [estadoJuego, setEstadoJuego] = useState(false);
     useEffect(() => {
         setTimeout(() => {
             
-            setNuevoAudio("ALetter.mp3")
+            // setNuevoAudio("ALetter.mp3")
         }, 4000);
         return () => {
             
@@ -20,12 +20,12 @@ export const LanguageScreen = () => {
     }, [])
     const navigation = useNavigation<NativeStackNavigationProp<any>>();
     
-    const modificarAudio = (nuevoAudio : string) =>{
-        setNuevoAudio(nuevoAudio);
-        if(nuevoAudio === "success.mp3"){
-            navigation.navigate("SecondGameLanguageScreen");
-        }
-    }
+    // const modificarAudio = (nuevoAudio : string) =>{
+    //     setNuevoAudio(nuevoAudio);
+    //     if(nuevoAudio === "success.mp3"){
+    //         navigation.navigate("SecondGameLanguageScreen");
+    //     }
+    // }
     
   return (
     <GradientBackground colors = {['white','#80aaff']}>
@@ -40,11 +40,11 @@ export const LanguageScreen = () => {
         >
             <TouchableOpacity
                 activeOpacity={0.6}
-                onPress = {()=>modificarAudio("success.mp3")}
+                // onPress = {()=>modificarAudio("success.mp3")}
             >
                 <View style = {styles.card}>
                     <Image
-                        source={require('../../../../assets/Home/lettersGame/letterA.png')}
+                        source={require('../../../../assets/Home/lettersGame/letterA.jpg')}
                         style={styles.cardImage}
                     />
                     {/* <Text style = {styles.cardDescription}>Lenguaje</Text> */}
@@ -54,11 +54,11 @@ export const LanguageScreen = () => {
             
             <TouchableOpacity
                 activeOpacity={0.6}
-                onPress = { ()=>modificarAudio("fail.mp3")}
+                // onPress = { ()=>modificarAudio("fail.mp3")}
             >
                 <View style = {styles.card}>
                         <Image
-                            source={require('../../../../assets/Home/lettersGame/letterF.png')}
+                            source={require('../../../../assets/Home/lettersGame/letterF.jpg')}
                             style={styles.cardImage}
                         />
                     {/* <Text style = {styles.cardDescription}>Matemáticas</Text> */}
@@ -68,12 +68,12 @@ export const LanguageScreen = () => {
             
             <TouchableOpacity
                 activeOpacity={0.6}
-                onPress = { ()=>modificarAudio("fail.mp3")}
+                // onPress = { ()=>modificarAudio("fail.mp3")}
             >
                 <View style = {styles.card}>
                         <Image
                             // source={{uri : 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'}}
-                            source={require('../../../../assets/Home/lettersGame/letterH.png')}
+                            source={require('../../../../assets/Home/lettersGame/letterH.jpg')}
                             style={styles.cardImage}
                         />
                     {/* <Text style = {styles.cardDescription}>Ciencias Naturales</Text> */}
@@ -83,11 +83,11 @@ export const LanguageScreen = () => {
             
             <TouchableOpacity
                 activeOpacity={0.6}
-                onPress = { ()=>modificarAudio("fail.mp3")}
+                // onPress = { ()=>modificarAudio("fail.mp3")}
             >
                 <View style = {styles.card}>
                         <Image
-                            source={require('../../../../assets/Home/lettersGame/letterY.png')}
+                            source={require('../../../../assets/Home/lettersGame/letterY.jpg')}
                             style={styles.cardImage}
                         />
                     {/* <Text style = {styles.cardDescription}>Ciencias Sociales</Text> */}
