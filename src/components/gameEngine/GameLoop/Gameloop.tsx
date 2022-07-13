@@ -1,3 +1,4 @@
+
 import Constants from "../../../constants/constants"
 
 const randomBetween = (min:number, max:number):number=>{
@@ -52,12 +53,19 @@ export const Gameloop = (entities :any, {touches, dispatch, events}:any) => {
             for(let i=0 ; i<tail.elements ;i++){
                 
             }
-            
             if(head.position[0] === food.position[0] && head.position[1] === food.position[1]){
-
-                tail.elements = [[food.position[0], food.position[1]]].concat(tail.elements);
+                tail.elements = [[food.position[0], food.position[1]]].concat(tail.elements).concat();
                 food.position[0]=randomBetween(0, Constants.GRID_SIZE-1);
                 food.position[1]=randomBetween(0, Constants.GRID_SIZE-1);
+                tail.lettersIndex = tail.lettersIndex+1;
+                food.lettersIndex = food.lettersIndex+1;
+                console.log("INdex de leteas")
+                console.log(tail.lettersIndex);
+                if(tail.lettersIndex === 26){
+                    dispatch({
+                        type : "win"
+                    })
+                }
             }
         }
     }

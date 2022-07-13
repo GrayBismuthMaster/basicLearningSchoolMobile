@@ -4,7 +4,7 @@ const Constants = {
     MAX_WIDTH : Dimensions.get("screen").width,
     MAX_HEIGHT : Dimensions.get("screen").height,
     GRID_SIZE : 15,
-    CELL_SIZE : 24
+    CELL_SIZE : 27
 }
 
 export default Constants;

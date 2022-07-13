@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Constants from '../../../constants/constants'
 import { GameEngine } from 'react-native-game-engine';
-import { Alert, View } from 'react-native';
+import { Alert, Image, Text, View } from 'react-native';
 import { styles } from '../../../theme/appTheme';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { GradientBackground } from '../../../components/GradientBackground';
@@ -10,13 +10,19 @@ import { Gameloop } from '../../../components/gameEngine/GameLoop/Gameloop';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Food } from '../../../components/gameEngine/Entities/Food';
 import { Tail } from '../../../components/gameEngine/Entities/Tail';
+import { lettersData } from '../../../Data/lettersData';
+import { flexbox, height } from '@mui/system';
 export const SecondGameLanguageScreen = () => {
     const [gameState, setGameState] = useState(true);
-    const boardSize = Constants.GRID_SIZE * Constants.CELL_SIZE;
+    const boardSize = (Constants.GRID_SIZE * Constants.CELL_SIZE);
     let engine: GameEngine | null = null;
     const onEvent = (e : any)=>{
         if(e.type === "game-over"){
             Alert.alert("PERDISTE JE JE")
+            setGameState(false);
+        }
+        if(e.type === "win"){
+            Alert.alert("Ganaste je je");
             setGameState(false);
         }
     }
@@ -37,7 +43,7 @@ export const SecondGameLanguageScreen = () => {
                     ref={(ref)=>engine=ref}
                     style = {{
                         width : boardSize,
-                        height : boardSize+70,
+                        height : boardSize,
                         flex : null||undefined,
                         backgroundColor : "rgba(255,255,255,0.7)",
                     }}
@@ -56,12 +62,16 @@ export const SecondGameLanguageScreen = () => {
                         food : {
                             position : [randomBetween(0, Constants.GRID_SIZE-1), randomBetween(0, Constants.GRID_SIZE-1)],
                             size : Constants.CELL_SIZE, 
+                            lettersIndex : 0,
+                            imageLetters : lettersData,
                             renderer : <Food/>
                         },
                         tail : {
                             size : Constants.CELL_SIZE,
                             elements : [],
-                            renderer : <Tail/>
+                            renderer : <Tail/>,
+                            lettersIndex : 0,
+                            imageLetters : lettersData
                         }
                     }}
                     systems = {[
@@ -74,21 +84,85 @@ export const SecondGameLanguageScreen = () => {
                 <View style={styles.controls}>
                     <View style={styles.controlRow}>
                         <TouchableOpacity onPress={()=>{(engine as any).dispatch({type:"move-up"})}}>
-                            <View style={styles.control}/>
+                            <View style={[
+                                    styles.control,
+                                    {
+                                        borderRadius : 50,
+                                        backgroundColor : "rgba(255,255,255,.4)"
+                                    }
+                                ]}>
+                                    <Image
+                                        source={require("../../../../assets/Home/Joystick/arrowUp.png")}
+                                        style={{
+
+                                            flex : 1,
+                                            width : "70%",
+                                            marginLeft : '12%'
+                                        }}
+                                    />
+                            </View>
                         </TouchableOpacity>
                     </View>
                     <View style={styles.controlRow}>
                         <TouchableOpacity onPress={()=>{(engine as any).dispatch({type:"move-left"})}}>
-                            <View style={styles.control}/>
+                        <View style={[
+                                    styles.control,
+                                    {
+                                        borderRadius : 50,
+                                        backgroundColor : "rgba(255,255,255,.4)"
+                                    }
+                                ]}>
+                                    <Image
+                                        source={require("../../../../assets/Home/Joystick/arrowLeft.png")}
+                                        style={{
+
+                                            flex : 1,
+                                            width : "100%",
+                                            marginLeft : '0%'
+                                        }}
+                                    />
+                            </View>
                         </TouchableOpacity>
                         <View style={[styles.control, {backgroundColor : null||undefined}]}/>
                         <TouchableOpacity onPress={()=>{(engine as any).dispatch({type:"move-right"})}}>
-                            <View style={styles.control}/>
+                        <View style={[
+                                    styles.control,
+                                    {
+                                        borderRadius : 50,
+                                        backgroundColor : "rgba(255,255,255,.4)"
+                                    }
+                                ]}>
+                                    <Image
+                                        source={require("../../../../assets/Home/Joystick/arrowRight.png")}
+                                        style={{
+
+                                            flex : 1,
+                                            width : "100%",
+                                            marginLeft : '0%'
+                                        }}
+                                    />
+                            </View>
                         </TouchableOpacity>
                     </View>
                     <View style={styles.controlRow}>
                         <TouchableOpacity onPress={()=>{(engine as any).dispatch({type:"move-down"})}}>
-                            <View style={styles.control}/>
+                        <View style={[
+                                    styles.control,
+                                    {
+                                        borderRadius : 50,
+                                        backgroundColor : "rgba(255,255,255,.4)"
+                                    }
+                                ]}>
+                                    <Image
+                                        source={require("../../../../assets/Home/Joystick/arrowDown.png")}
+                                        style={{
+
+                                            flex : 1,
+                                            width : "70%",
+                                            marginLeft : '12%'
+                                        }}
+                                    />
+                            </View>
                         </TouchableOpacity>
                     </View>
                 </View>
