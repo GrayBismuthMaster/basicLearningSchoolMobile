@@ -10,8 +10,10 @@ import { Gameloop } from '../../../components/gameEngine/GameLoop/Gameloop';
 import { Food } from '../../../components/gameEngine/Entities/Food';
 import { Tail } from '../../../components/gameEngine/Entities/Tail';
 import { lettersData } from '../../../Data/lettersData';
+import { useAudio } from '../../../hooks/useAudio';
 // import { flexbox, height } from '@mui/system';
 export const SecondGameLanguageScreen = () => {
+    const {} = useAudio("second_game_language_instructions.mp3");
     const [gameState, setGameState] = useState(true);
     const boardSize = (Constants.GRID_SIZE * Constants.CELL_SIZE);
     let engine: GameEngine | null = null;
