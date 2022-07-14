@@ -18,11 +18,11 @@ export const SecondGameLanguageScreen = () => {
     let engine: GameEngine | null = null;
     const onEvent = (e : any)=>{
         if(e.type === "game-over"){
-            Alert.alert("PERDISTE JE JE")
+            Alert.alert("PERDISTE")
             setGameState(false);
         }
         if(e.type === "win"){
-            Alert.alert("Ganaste je je");
+            Alert.alert("GANASTE");
             setGameState(false);
         }
     }
