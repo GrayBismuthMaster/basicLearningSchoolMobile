@@ -42,7 +42,7 @@ export const PublicHomeScreen = () => {
             <TouchableOpacity
                 activeOpacity={0.6}
                 onPress = { () =>{
-                    navigation.navigate('Historial de visitas')
+                    navigation.navigate('MathematicsScreen')
                 }}
             >
                 <View style = {styles.card}>

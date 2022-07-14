@@ -4,6 +4,7 @@ import Sound from 'react-native-sound';
 export const useAudio = (initialAudio : string) => {
     const [audio, setAudio] = useState(initialAudio);
     const [modifiedAudio, setModifiedAudio]= useState(0)
+
     useEffect(() => {
       const sound = new Sound(
         audio,
@@ -20,7 +21,7 @@ export const useAudio = (initialAudio : string) => {
       sound.play();
         
       return () => {
-        console.log("salirda")      
+        console.log("startup")      
       };
     }, [modifiedAudio])
 

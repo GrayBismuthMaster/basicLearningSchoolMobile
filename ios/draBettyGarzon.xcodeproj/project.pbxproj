@@ -21,6 +21,8 @@
 		FA2903F6287507C60009733A /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA2903E6287501F90009733A /* MaterialCommunityIcons.ttf */; };
 		FA2903F7287507C60009733A /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA2903EF287501FA0009733A /* MaterialIcons.ttf */; };
 		FA7F3BB42880788600B55CCD /* second_game_language_instructions.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA7F3BB32880788500B55CCD /* second_game_language_instructions.mp3 */; };
+		FA7F3BB62880A73E00B55CCD /* choose_number_seven.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA7F3BB52880A73E00B55CCD /* choose_number_seven.mp3 */; };
+		FA7F3BB82880AEDA00B55CCD /* mathematics_welcome.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA7F3BB72880AED900B55CCD /* mathematics_welcome.mp3 */; };
 		FAD7BC092876795700695769 /* longDurationInstrumentalGameLowVolumeCut.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FAD7BC082876795700695769 /* longDurationInstrumentalGameLowVolumeCut.mp3 */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +75,8 @@
 		FA2903F2287501FA0009733A /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Octicons.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		FA2903F3287501FA0009733A /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		FA7F3BB32880788500B55CCD /* second_game_language_instructions.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = second_game_language_instructions.mp3; path = Audios/second_game_language_instructions.mp3; sourceTree = "<group>"; };
+		FA7F3BB52880A73E00B55CCD /* choose_number_seven.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = choose_number_seven.mp3; path = Audios/choose_number_seven.mp3; sourceTree = "<group>"; };
+		FA7F3BB72880AED900B55CCD /* mathematics_welcome.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = mathematics_welcome.mp3; path = Audios/mathematics_welcome.mp3; sourceTree = "<group>"; };
 		FAD7BC082876795700695769 /* longDurationInstrumentalGameLowVolumeCut.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = longDurationInstrumentalGameLowVolumeCut.mp3; path = Audios/longDurationInstrumentalGameLowVolumeCut.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,6 +150,8 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				FA7F3BB72880AED900B55CCD /* mathematics_welcome.mp3 */,
+				FA7F3BB52880A73E00B55CCD /* choose_number_seven.mp3 */,
 				FA7F3BB32880788500B55CCD /* second_game_language_instructions.mp3 */,
 				FA0E49E92877B9FF00E1525E /* success.mp3 */,
 				FA0E49E72877B9A600E1525E /* fail.mp3 */,
@@ -300,6 +306,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA7F3BB82880AEDA00B55CCD /* mathematics_welcome.mp3 in Resources */,
+				FA7F3BB62880A73E00B55CCD /* choose_number_seven.mp3 in Resources */,
 				FA7F3BB42880788600B55CCD /* second_game_language_instructions.mp3 in Resources */,
 				FA0E49EA2877B9FF00E1525E /* success.mp3 in Resources */,
 				FA0E49E82877B9A600E1525E /* fail.mp3 in Resources */,

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Constants from '../../../constants/constants'
 import { GameEngine } from 'react-native-game-engine';
 import { Alert, Image, Text, TouchableOpacity, View } from 'react-native';
@@ -9,13 +9,11 @@ import { Head } from '../../../components/gameEngine/Entities/Head';
 import { Gameloop } from '../../../components/gameEngine/GameLoop/Gameloop';
 import { Food } from '../../../components/gameEngine/Entities/Food';
 import { Tail } from '../../../components/gameEngine/Entities/Tail';
-import { lettersData } from '../../../Data/lettersData';
+import { numbersData } from '../../../Data/numbersData';
 import { useAudio } from '../../../hooks/useAudio';
-// import { flexbox, height } from '@mui/system';
-export const SecondGameLanguageScreen = () => {
-   
-    const {} = useAudio("second_game_language_instructions.mp3");    
-    
+
+export const SecondGameMathematicsScreen = () => {
+    const {} = useAudio("second_game_mathematics_instructions.mp3"); 
     const [gameState, setGameState] = useState(true);
     const boardSize = (Constants.GRID_SIZE * Constants.CELL_SIZE);
     let engine: GameEngine | null = null;
@@ -66,7 +64,7 @@ export const SecondGameLanguageScreen = () => {
                             position : [randomBetween(0, Constants.GRID_SIZE-1), randomBetween(0, Constants.GRID_SIZE-1)],
                             size : Constants.CELL_SIZE, 
                             itemsIndex : 0,
-                            imageItems : lettersData,
+                            imageItems : numbersData,
                             renderer : <Food/>
                         },
                         tail : {
@@ -74,8 +72,8 @@ export const SecondGameLanguageScreen = () => {
                             elements : [],
                             renderer : <Tail/>,
                             itemsIndex : 0,
-                            imageItems : lettersData,
-                            maxNumberItems : lettersData.length
+                            imageItems : numbersData,
+                            maxNumberItems : numbersData.length-1
                         }
                     }}
                     systems = {[

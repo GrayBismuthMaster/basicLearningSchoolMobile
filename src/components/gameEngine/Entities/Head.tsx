@@ -3,8 +3,6 @@ import { Image, View } from 'react-native'
 export const Head = (props:any) => {
     const x = props.position[0];
     const y = props.position[1];
-    console.log(props.side);
-    let requireUrl = `../../../../assets/Home/BoyGif/${props.side}`;
   return (
     <Image
         source={props.side === 'right' ? require("../../../../assets/Home/BoyGif/rightBoyWalking.gif"): props.side === "left" ? require("../../../../assets/Home/BoyGif/leftBoyWalking.gif") : props.side === "front" ? require("../../../../assets/Home/BoyGif/frontBoyWalking.gif") : props.side === "back" ? require("../../../../assets/Home/BoyGif/backBoyWalking.gif") : ""}
