@@ -18,8 +18,7 @@ const publicInitialState : PublicState = {
 export const PublicContext = createContext({} as PublicContextProps);
 export const PublicProvider = ({children} : any)=>{
     if(Platform.OS === 'ios'){
-        
-        const {} = useAudio("longDurationInstrumentalGameLowVolumecut.mp3");
+        const {} = useAudio("longDurationInstrumentalGameLowVolumeCut.mp3");
     }
      
     const {} = useAudio("longdurationinstrumentalgamelowvolumecut.mp3");
