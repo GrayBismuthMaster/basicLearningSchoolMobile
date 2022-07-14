@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { Dimensions, Image, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from "react-native"
+import { Dimensions, Image, Platform, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from "react-native"
 import { GradientBackground } from "../../../components/GradientBackground"
 import { useAudio } from '../../../hooks/useAudio';
 const widthScreen = Dimensions.get('window').width;
 const heightScreen = Dimensions.get('window').height;
 export const LanguageScreen = () => {
-    const {setNuevoAudio} = useAudio("languageWelcome.mp3");
-    // const [estadoJuego, setEstadoJuego] = useState(false);
+    const {setNuevoAudio} = useAudio( Platform.OS === 'ios' ? "languageWelcome.mp3" : "languagewelcome.mp3");
+    const [estadoJuego, setEstadoJuego] = useState(false);
     useEffect(() => {
         setTimeout(() => {
             
-            setNuevoAudio("ALetter.mp3")
+            setNuevoAudio( Platform.OS === 'ios' ? "ALetter.mp3":"aletter.mp3")
         }, 4000);
         return () => {
             
@@ -44,7 +44,7 @@ export const LanguageScreen = () => {
             >
                 <View style = {styles.card}>
                     <Image
-                        source={require('../../../../assets/Home/lettersGame/letterA.png')}
+                        source={require('../../../../assets/Home/lettersGame/letterA.jpg')}
                         style={styles.cardImage}
                     />
                     {/* <Text style = {styles.cardDescription}>Lenguaje</Text> */}
@@ -58,7 +58,7 @@ export const LanguageScreen = () => {
             >
                 <View style = {styles.card}>
                         <Image
-                            source={require('../../../../assets/Home/lettersGame/letterF.png')}
+                            source={require('../../../../assets/Home/lettersGame/letterF.jpg')}
                             style={styles.cardImage}
                         />
                     {/* <Text style = {styles.cardDescription}>Matemáticas</Text> */}
@@ -73,7 +73,7 @@ export const LanguageScreen = () => {
                 <View style = {styles.card}>
                         <Image
                             // source={{uri : 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'}}
-                            source={require('../../../../assets/Home/lettersGame/letterH.png')}
+                            source={require('../../../../assets/Home/lettersGame/letterH.jpg')}
                             style={styles.cardImage}
                         />
                     {/* <Text style = {styles.cardDescription}>Ciencias Naturales</Text> */}
@@ -87,7 +87,7 @@ export const LanguageScreen = () => {
             >
                 <View style = {styles.card}>
                         <Image
-                            source={require('../../../../assets/Home/lettersGame/letterY.png')}
+                            source={require('../../../../assets/Home/lettersGame/letterY.jpg')}
                             style={styles.cardImage}
                         />
                     {/* <Text style = {styles.cardDescription}>Ciencias Sociales</Text> */}

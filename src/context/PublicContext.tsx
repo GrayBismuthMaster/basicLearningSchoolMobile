@@ -5,6 +5,7 @@ import basicLearningSchoolApi from '../api/basicLearningSchoolApi';
 import { PublicUsuario, LoginResponse, PublicData, PublicRegisterData, Character } from '../interfaces/appInterfaces'
 import { publicReducer, PublicState} from './publicReducer';
 import { useAudio } from '../hooks/useAudio';
+import { Platform } from 'react-native';
 type PublicContextProps = {
     user: PublicUsuario | null;
     registro : (registerData : PublicRegisterData) => void
@@ -16,7 +17,13 @@ const publicInitialState : PublicState = {
 }
 export const PublicContext = createContext({} as PublicContextProps);
 export const PublicProvider = ({children} : any)=>{
-    const {} = useAudio("longDurationInstrumentalGameLowVolumeCut.mp3");
+    if(Platform.OS === 'ios'){
+        
+        const {} = useAudio("longDurationInstrumentalGameLowVolumecut.mp3");
+    }
+     
+    const {} = useAudio("longdurationinstrumentalgamelowvolumecut.mp3");
+   
     const [state, dispatch] = useReducer(publicReducer, publicInitialState);
     useEffect(()=>{
         console.log("entra")
