@@ -1,17 +1,16 @@
 import React, { useState } from 'react'
 import Constants from '../../../constants/constants'
 import { GameEngine } from 'react-native-game-engine';
-import { Alert, Image, Text, View } from 'react-native';
+import { Alert, Image, Text, TouchableOpacity, View } from 'react-native';
 import { styles } from '../../../theme/appTheme';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { GradientBackground } from '../../../components/GradientBackground';
 import { Head } from '../../../components/gameEngine/Entities/Head';
 import { Gameloop } from '../../../components/gameEngine/GameLoop/Gameloop';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Food } from '../../../components/gameEngine/Entities/Food';
 import { Tail } from '../../../components/gameEngine/Entities/Tail';
 import { lettersData } from '../../../Data/lettersData';
-import { flexbox, height } from '@mui/system';
+// import { flexbox, height } from '@mui/system';
 export const SecondGameLanguageScreen = () => {
     const [gameState, setGameState] = useState(true);
     const boardSize = (Constants.GRID_SIZE * Constants.CELL_SIZE);

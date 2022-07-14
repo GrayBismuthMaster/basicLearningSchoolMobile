@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { Dimensions, Image, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from "react-native"
+import { Dimensions, Image, Platform, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from "react-native"
 import { GradientBackground } from "../../../components/GradientBackground"
-// import { useAudio } from '../../../hooks/useAudio';
+import { useAudio } from '../../../hooks/useAudio';
 const widthScreen = Dimensions.get('window').width;
 const heightScreen = Dimensions.get('window').height;
 export const LanguageScreen = () => {
-    // const {setNuevoAudio} = useAudio("languageWelcome.mp3");
+    const {setNuevoAudio} = useAudio( Platform.OS === 'ios' ? "languageWelcome.mp3" : "languagewelcome.mp3");
     const [estadoJuego, setEstadoJuego] = useState(false);
     useEffect(() => {
         setTimeout(() => {
             
-            // setNuevoAudio("ALetter.mp3")
+            setNuevoAudio( Platform.OS === 'ios' ? "ALetter.mp3":"aletter.mp3")
         }, 4000);
         return () => {
             
@@ -20,12 +20,12 @@ export const LanguageScreen = () => {
     }, [])
     const navigation = useNavigation<NativeStackNavigationProp<any>>();
     
-    // const modificarAudio = (nuevoAudio : string) =>{
-    //     setNuevoAudio(nuevoAudio);
-    //     if(nuevoAudio === "success.mp3"){
-    //         navigation.navigate("SecondGameLanguageScreen");
-    //     }
-    // }
+    const modificarAudio = (nuevoAudio : string) =>{
+        setNuevoAudio(nuevoAudio);
+        if(nuevoAudio === "success.mp3"){
+            navigation.navigate("SecondGameLanguageScreen");
+        }
+    }
     
   return (
     <GradientBackground colors = {['white','#80aaff']}>
@@ -40,7 +40,7 @@ export const LanguageScreen = () => {
         >
             <TouchableOpacity
                 activeOpacity={0.6}
-                // onPress = {()=>modificarAudio("success.mp3")}
+                onPress = {()=>modificarAudio("success.mp3")}
             >
                 <View style = {styles.card}>
                     <Image
@@ -54,7 +54,7 @@ export const LanguageScreen = () => {
             
             <TouchableOpacity
                 activeOpacity={0.6}
-                // onPress = { ()=>modificarAudio("fail.mp3")}
+                onPress = { ()=>modificarAudio("fail.mp3")}
             >
                 <View style = {styles.card}>
                         <Image
@@ -68,7 +68,7 @@ export const LanguageScreen = () => {
             
             <TouchableOpacity
                 activeOpacity={0.6}
-                // onPress = { ()=>modificarAudio("fail.mp3")}
+                onPress = { ()=>modificarAudio("fail.mp3")}
             >
                 <View style = {styles.card}>
                         <Image
@@ -83,7 +83,7 @@ export const LanguageScreen = () => {
             
             <TouchableOpacity
                 activeOpacity={0.6}
-                // onPress = { ()=>modificarAudio("fail.mp3")}
+                onPress = { ()=>modificarAudio("fail.mp3")}
             >
                 <View style = {styles.card}>
                         <Image
