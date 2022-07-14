@@ -7,15 +7,14 @@ import { useAudio } from '../../../hooks/useAudio';
 const widthScreen = Dimensions.get('window').width;
 const heightScreen = Dimensions.get('window').height;
 export const MathematicsScreen = () => {
-    const {setNuevoAudio} = useAudio("languageWelcome.mp3");
+    const {setNuevoAudio} = useAudio("mathematics_welcome.mp3");
     // const [estadoJuego, setEstadoJuego] = useState(false);
     useEffect(() => {
         setTimeout(() => {
-            
-            setNuevoAudio("ALetter.mp3")
+            setNuevoAudio("choose_number_seven.mp3")
         }, 4000);
         return () => {
-            
+            console.log("cleanup")
         };
     }, [])
     const navigation = useNavigation<NativeStackNavigationProp<any>>();
@@ -23,7 +22,7 @@ export const MathematicsScreen = () => {
     const modificarAudio = (nuevoAudio : string) =>{
         setNuevoAudio(nuevoAudio);
         if(nuevoAudio === "success.mp3"){
-            navigation.navigate("SecondGameLanguageScreen");
+            navigation.navigate("SecondGameMathematicsScreen");
         }
     }
     
@@ -40,14 +39,13 @@ export const MathematicsScreen = () => {
         >
             <TouchableOpacity
                 activeOpacity={0.6}
-                onPress = {()=>modificarAudio("success.mp3")}
+                onPress = {()=>modificarAudio("fail.mp3")}
             >
                 <View style = {styles.card}>
                     <Image
-                        source={require('../../../../assets/Home/lettersGame/letterA.png')}
+                        source={require('../../../../assets/Home/numbersGame/number2.jpg')}
                         style={styles.cardImage}
                     />
-                    {/* <Text style = {styles.cardDescription}>Lenguaje</Text> */}
                 </View>
                 
             </TouchableOpacity>
@@ -58,25 +56,23 @@ export const MathematicsScreen = () => {
             >
                 <View style = {styles.card}>
                         <Image
-                            source={require('../../../../assets/Home/lettersGame/letterF.png')}
+                            source={require('../../../../assets/Home/numbersGame/number4.jpg')}
                             style={styles.cardImage}
                         />
-                    {/* <Text style = {styles.cardDescription}>Matemáticas</Text> */}
                 </View>
         
             </TouchableOpacity>
             
             <TouchableOpacity
                 activeOpacity={0.6}
-                onPress = { ()=>modificarAudio("fail.mp3")}
+                onPress = { ()=>modificarAudio("success.mp3")}
             >
                 <View style = {styles.card}>
                         <Image
                             // source={{uri : 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'}}
-                            source={require('../../../../assets/Home/lettersGame/letterH.png')}
+                            source={require('../../../../assets/Home/numbersGame/number7.jpg')}
                             style={styles.cardImage}
                         />
-                    {/* <Text style = {styles.cardDescription}>Ciencias Naturales</Text> */}
                 </View>
 
             </TouchableOpacity>
@@ -87,10 +83,9 @@ export const MathematicsScreen = () => {
             >
                 <View style = {styles.card}>
                         <Image
-                            source={require('../../../../assets/Home/lettersGame/letterY.png')}
+                            source={require('../../../../assets/Home/numbersGame/number8.jpg')}
                             style={styles.cardImage}
                         />
-                    {/* <Text style = {styles.cardDescription}>Ciencias Sociales</Text> */}
                 </View>
             </TouchableOpacity>
             

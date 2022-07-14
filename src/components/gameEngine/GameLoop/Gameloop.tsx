@@ -9,7 +9,7 @@ export const Gameloop = (entities :any, {touches, dispatch, events}:any) => {
     let head = entities.head;
     let food = entities.food;
     let tail = entities.tail;
-    console.log(head.renderer);
+    console.log(tail.maxNumberItems);
     if(events.length){
         for(let i=0; i<events.length; i++){
             if(events[i].type==="move-up" && head.yspeed !==1){
@@ -57,11 +57,12 @@ export const Gameloop = (entities :any, {touches, dispatch, events}:any) => {
                 tail.elements = [[food.position[0], food.position[1]]].concat(tail.elements).concat();
                 food.position[0]=randomBetween(0, Constants.GRID_SIZE-1);
                 food.position[1]=randomBetween(0, Constants.GRID_SIZE-1);
-                tail.lettersIndex = tail.lettersIndex+1;
-                food.lettersIndex = food.lettersIndex+1;
+                tail.itemsIndex = tail.itemsIndex+1;
+                food.itemsIndex = food.itemsIndex+1;
                 console.log("INdex de leteas")
-                console.log(tail.lettersIndex);
-                if(tail.lettersIndex === 26){
+                console.log(tail.itemsIndex);
+                
+                if(tail.itemsIndex === tail.maxNumberItems){
                     dispatch({
                         type : "win"
                     })

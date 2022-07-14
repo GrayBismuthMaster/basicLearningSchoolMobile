@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Image, View } from 'react-native';
 import Constants from '../../../constants/constants';
-export const Tail = ({size, elements, lettersIndex, imageLetters}:any) => {
-    console.log(lettersIndex);
+export const Tail = ({size, elements, imageItems}:any) => {
     return (
         <View style = {{
             width : Constants.GRID_SIZE* size,
@@ -11,7 +10,7 @@ export const Tail = ({size, elements, lettersIndex, imageLetters}:any) => {
             {
                 elements.map((el:any,idx:any)=>(
                     <Image
-                        source={imageLetters[idx].source} 
+                        source={imageItems[idx].source} 
                         key= {idx} 
                         style={{
                             width : size,

@@ -19,6 +19,8 @@ import {PublicHomeScreen} from '../screens/Home/PublicHomeScreen';
         // END LANGUAGE 
         
         //START MATH
+            import { MathematicsScreen } from '../screens/PublicGames/Mathematics/MathematicsScreen';
+            import { SecondGameMathematicsScreen } from '../screens/PublicGames/Mathematics/SecondGameMathematicsScreen';
         // END MATH
 
         // START NATURAL SCIENCE 
@@ -36,8 +38,10 @@ import {PublicHomeScreen} from '../screens/Home/PublicHomeScreen';
      StudentScreen : undefined,
      PublicScreen : undefined,
      PublicHomeScreen : undefined,
-     LanguageScreen : undefined
-     SecondGameLanguageScreen : undefined
+     LanguageScreen : undefined;
+     SecondGameLanguageScreen : undefined;
+     MathematicsScreen : undefined;
+     SecondGameMathematicsScreen : undefined;
  }
  const RootStack = createNativeStackNavigator<RootStackParams>();
 export const StackNavigator = () => {
@@ -76,6 +80,10 @@ export const StackNavigator = () => {
                                 <RootStack.Screen name="LanguageScreen" options= {{title : "Lenguaje"}} component ={LanguageScreen}/> 
                                 <RootStack.Screen name="SecondGameLanguageScreen" options= {{title : "Segundo juego lenguaje"}} component ={SecondGameLanguageScreen}/>  
                             {/* FIN LENGUAJE  */}
+                            {/* MATEMATICAS */}
+                            <RootStack.Screen name="MathematicsScreen" options= {{title : "Matemáticas"}} component ={MathematicsScreen}/> 
+                            <RootStack.Screen name="SecondGameMathematicsScreen" options= {{title : "Segundo juego Matemáticas"}} component ={SecondGameMathematicsScreen}/>  
+                            {/* FIN MATEMATICAS  */}
                         {/* FIN PANTALLAS ALUMNOS  */}
                     </>
                 )

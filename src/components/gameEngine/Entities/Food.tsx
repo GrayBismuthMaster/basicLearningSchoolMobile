@@ -1,13 +1,13 @@
 import React from 'react'
 import { Image, View } from 'react-native'
-export const Food = ({position, size, imageLetters, lettersIndex}:any) => {
+export const Food = ({position, size, imageItems, itemsIndex}:any) => {
   
     const x = position[0];
     const y = position[1];
     
   return (
     <Image
-        source={imageLetters[lettersIndex].source}
+        source={imageItems[itemsIndex].source}
         style = {{
             width : size,
             height : size,
