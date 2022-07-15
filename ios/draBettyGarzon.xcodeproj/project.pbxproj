@@ -23,6 +23,12 @@
 		FA7F3BB42880788600B55CCD /* second_game_language_instructions.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA7F3BB32880788500B55CCD /* second_game_language_instructions.mp3 */; };
 		FA7F3BB62880A73E00B55CCD /* choose_number_seven.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA7F3BB52880A73E00B55CCD /* choose_number_seven.mp3 */; };
 		FA7F3BB82880AEDA00B55CCD /* mathematics_welcome.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA7F3BB72880AED900B55CCD /* mathematics_welcome.mp3 */; };
+		FA7F3BBA2880F2EF00B55CCD /* choose_animal_lion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA7F3BB92880F2EF00B55CCD /* choose_animal_lion.mp3 */; };
+		FA7F3BBC2880F7D100B55CCD /* natural_science_welcome.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA7F3BBB2880F7D100B55CCD /* natural_science_welcome.mp3 */; };
+		FA7F3BBE2880FA0500B55CCD /* second_game_natural_science_instructions.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA7F3BBD2880FA0500B55CCD /* second_game_natural_science_instructions.mp3 */; };
+		FA7F3BC028811A6100B55CCD /* social_science_welcome.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA7F3BBF28811A6000B55CCD /* social_science_welcome.mp3 */; };
+		FA7F3BC228811B3900B55CCD /* choose_egypt.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA7F3BC128811B3900B55CCD /* choose_egypt.mp3 */; };
+		FA7F3BC4288122C300B55CCD /* second_game_social_science_instructions.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA7F3BC3288122C300B55CCD /* second_game_social_science_instructions.mp3 */; };
 		FAD7BC092876795700695769 /* longDurationInstrumentalGameLowVolumeCut.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FAD7BC082876795700695769 /* longDurationInstrumentalGameLowVolumeCut.mp3 */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +83,12 @@
 		FA7F3BB32880788500B55CCD /* second_game_language_instructions.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = second_game_language_instructions.mp3; path = Audios/second_game_language_instructions.mp3; sourceTree = "<group>"; };
 		FA7F3BB52880A73E00B55CCD /* choose_number_seven.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = choose_number_seven.mp3; path = Audios/choose_number_seven.mp3; sourceTree = "<group>"; };
 		FA7F3BB72880AED900B55CCD /* mathematics_welcome.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = mathematics_welcome.mp3; path = Audios/mathematics_welcome.mp3; sourceTree = "<group>"; };
+		FA7F3BB92880F2EF00B55CCD /* choose_animal_lion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = choose_animal_lion.mp3; path = Audios/choose_animal_lion.mp3; sourceTree = "<group>"; };
+		FA7F3BBB2880F7D100B55CCD /* natural_science_welcome.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = natural_science_welcome.mp3; path = Audios/natural_science_welcome.mp3; sourceTree = "<group>"; };
+		FA7F3BBD2880FA0500B55CCD /* second_game_natural_science_instructions.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = second_game_natural_science_instructions.mp3; path = Audios/second_game_natural_science_instructions.mp3; sourceTree = "<group>"; };
+		FA7F3BBF28811A6000B55CCD /* social_science_welcome.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = social_science_welcome.mp3; path = Audios/social_science_welcome.mp3; sourceTree = "<group>"; };
+		FA7F3BC128811B3900B55CCD /* choose_egypt.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = choose_egypt.mp3; path = Audios/choose_egypt.mp3; sourceTree = "<group>"; };
+		FA7F3BC3288122C300B55CCD /* second_game_social_science_instructions.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = second_game_social_science_instructions.mp3; path = Audios/second_game_social_science_instructions.mp3; sourceTree = "<group>"; };
 		FAD7BC082876795700695769 /* longDurationInstrumentalGameLowVolumeCut.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = longDurationInstrumentalGameLowVolumeCut.mp3; path = Audios/longDurationInstrumentalGameLowVolumeCut.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,6 +162,12 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				FA7F3BC3288122C300B55CCD /* second_game_social_science_instructions.mp3 */,
+				FA7F3BC128811B3900B55CCD /* choose_egypt.mp3 */,
+				FA7F3BBF28811A6000B55CCD /* social_science_welcome.mp3 */,
+				FA7F3BBD2880FA0500B55CCD /* second_game_natural_science_instructions.mp3 */,
+				FA7F3BBB2880F7D100B55CCD /* natural_science_welcome.mp3 */,
+				FA7F3BB92880F2EF00B55CCD /* choose_animal_lion.mp3 */,
 				FA7F3BB72880AED900B55CCD /* mathematics_welcome.mp3 */,
 				FA7F3BB52880A73E00B55CCD /* choose_number_seven.mp3 */,
 				FA7F3BB32880788500B55CCD /* second_game_language_instructions.mp3 */,
@@ -306,6 +324,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA7F3BC4288122C300B55CCD /* second_game_social_science_instructions.mp3 in Resources */,
+				FA7F3BC228811B3900B55CCD /* choose_egypt.mp3 in Resources */,
+				FA7F3BC028811A6100B55CCD /* social_science_welcome.mp3 in Resources */,
+				FA7F3BBE2880FA0500B55CCD /* second_game_natural_science_instructions.mp3 in Resources */,
+				FA7F3BBC2880F7D100B55CCD /* natural_science_welcome.mp3 in Resources */,
+				FA7F3BBA2880F2EF00B55CCD /* choose_animal_lion.mp3 in Resources */,
 				FA7F3BB82880AEDA00B55CCD /* mathematics_welcome.mp3 in Resources */,
 				FA7F3BB62880A73E00B55CCD /* choose_number_seven.mp3 in Resources */,
 				FA7F3BB42880788600B55CCD /* second_game_language_instructions.mp3 in Resources */,

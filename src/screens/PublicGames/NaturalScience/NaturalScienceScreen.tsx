@@ -1,18 +1,32 @@
-import React from 'react'
-import { useNavigation } from '@react-navigation/native';
-import { View, Text, Dimensions, StyleSheet, SafeAreaView, TouchableOpacity, Image } from 'react-native'
-import {NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { GradientBackground } from '../../components/GradientBackground';
-// export type RootStackParamList = {
-//     PublicScreen: any;
-//   };
-
+import React, { useEffect, useState } from 'react'
+import { useNavigation } from "@react-navigation/native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { Dimensions, Image, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from "react-native"
+import { GradientBackground } from "../../../components/GradientBackground"
+import { useAudio } from '../../../hooks/useAudio';
 const widthScreen = Dimensions.get('window').width;
 const heightScreen = Dimensions.get('window').height;
-export const PublicHomeScreen = () => {
-  const navigation = useNavigation<NativeStackNavigationProp<any>>();
+export const NaturalScienceScreen = () => {
+    const {setNuevoAudio} = useAudio("natural_science_welcome.mp3");
+    // const [estadoJuego, setEstadoJuego] = useState(false);
+    useEffect(() => {
+        setTimeout(() => {
+            setNuevoAudio("choose_animal_lion.mp3")
+        }, 4000);
+        return () => {
+            console.log("cleanup")
+        };
+    }, [])
+    const navigation = useNavigation<NativeStackNavigationProp<any>>();
+    
+    const modificarAudio = (nuevoAudio : string) =>{
+        setNuevoAudio(nuevoAudio);
+        if(nuevoAudio === "success.mp3"){
+            navigation.navigate("SecondGameNaturalScienceScreen");
+        }
+    }
+    
   return (
-
     <GradientBackground colors = {['white','#80aaff']}>
         <SafeAreaView
             style={{
@@ -25,76 +39,58 @@ export const PublicHomeScreen = () => {
         >
             <TouchableOpacity
                 activeOpacity={0.6}
-                onPress = { () =>{
-                    navigation.navigate('LanguageScreen')
-                }}
+                onPress = {()=>modificarAudio("fail.mp3")}
             >
                 <View style = {styles.card}>
                     <Image
-                        source={require('../../../assets/Home/lenguaje.jpg')}
+                        source={require('../../../../assets/Home/animalsGame/cat1.jpeg')}
                         style={styles.cardImage}
                     />
-                    <Text style = {styles.cardDescription}>Lenguaje</Text>
                 </View>
-                
             </TouchableOpacity>
             
             <TouchableOpacity
                 activeOpacity={0.6}
-                onPress = { () =>{
-                    navigation.navigate('MathematicsScreen')
-                }}
+                onPress = { ()=>modificarAudio("success.mp3")}
             >
                 <View style = {styles.card}>
                         <Image
-                            source={require('../../../assets/Home/matematicas.jpg')}
+                            source={require('../../../../assets/Home/animalsGame/lion2.jpeg')}
                             style={styles.cardImage}
                         />
-                    <Text style = {styles.cardDescription}>Matemáticas</Text>
                 </View>
-        
             </TouchableOpacity>
             
             <TouchableOpacity
                 activeOpacity={0.6}
-                onPress = { () =>{
-                    navigation.navigate('NaturalScienceScreen')
-                }}
+                onPress = { ()=>modificarAudio("fail.mp3")}
             >
                 <View style = {styles.card}>
                         <Image
                             // source={{uri : 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'}}
-                            source={require('../../../assets/Home/cienciasNaturales.jpg')}
+                            source={require('../../../../assets/Home/animalsGame/chameleon3.jpeg')}
                             style={styles.cardImage}
                         />
-                    <Text style = {styles.cardDescription}>Ciencias Naturales</Text>
                 </View>
-
             </TouchableOpacity>
             
             <TouchableOpacity
                 activeOpacity={0.6}
-                onPress = { () =>{
-                    navigation.navigate('SocialScienceScreen')
-                }}
+                onPress = { ()=>modificarAudio("fail.mp3")}
             >
                 <View style = {styles.card}>
                         <Image
-                            source={require('../../../assets/Home/cienciasSociales.jpg')}
+                            source={require('../../../../assets/Home/animalsGame/bird4.jpeg')}
                             style={styles.cardImage}
                         />
-                    <Text style = {styles.cardDescription}>Ciencias Sociales</Text>
                 </View>
             </TouchableOpacity>
-            
         </SafeAreaView>
     </GradientBackground>
   )
 }
-
 const styles = StyleSheet.create({
     card : {
-        
             width : widthScreen*.6,
             height : heightScreen*.2,
             backgroundColor : 'rgba(18, 59, 64,0.2)',
@@ -119,7 +115,7 @@ const styles = StyleSheet.create({
         fontSize : 20
     },
     cardImage : {
-        height:'50%', 
-        width:'40%'
+        height:'70%', 
+        width:'70%'
     }
 })

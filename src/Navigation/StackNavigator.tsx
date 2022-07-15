@@ -24,9 +24,13 @@ import {PublicHomeScreen} from '../screens/Home/PublicHomeScreen';
         // END MATH
 
         // START NATURAL SCIENCE 
+            import { NaturalScienceScreen } from '../screens/PublicGames/NaturalScience/NaturalScienceScreen';
+            import { SecondGameNaturalScienceScreen } from '../screens/PublicGames/NaturalScience/SecondGameNaturalScienceScreen';
         // END NATURAL SCIENCE 
 
         // START SOCIAL STUDIES 
+        import { SocialScienceScreen } from '../screens/PublicGames/SocialScience/SocialScienceScreen';
+        import { SecondGameSocialScienceScreen } from '../screens/PublicGames/SocialScience/SecondGameSocialScienceScreen';
         // END SOCIAL STUDIES 
     // END SUBJECTS 
 // FIN SUBJECT SCREENS 
@@ -42,6 +46,11 @@ import {PublicHomeScreen} from '../screens/Home/PublicHomeScreen';
      SecondGameLanguageScreen : undefined;
      MathematicsScreen : undefined;
      SecondGameMathematicsScreen : undefined;
+     NaturalScienceScreen : undefined;
+     SecondGameNaturalScienceScreen : undefined;
+     SocialScienceScreen : undefined;
+     SecondGameSocialScienceScreen : undefined;
+
  }
  const RootStack = createNativeStackNavigator<RootStackParams>();
 export const StackNavigator = () => {
@@ -81,9 +90,17 @@ export const StackNavigator = () => {
                                 <RootStack.Screen name="SecondGameLanguageScreen" options= {{title : "Segundo juego lenguaje"}} component ={SecondGameLanguageScreen}/>  
                             {/* FIN LENGUAJE  */}
                             {/* MATEMATICAS */}
-                            <RootStack.Screen name="MathematicsScreen" options= {{title : "Matemáticas"}} component ={MathematicsScreen}/> 
-                            <RootStack.Screen name="SecondGameMathematicsScreen" options= {{title : "Segundo juego Matemáticas"}} component ={SecondGameMathematicsScreen}/>  
+                                <RootStack.Screen name="MathematicsScreen" options= {{title : "Matemáticas"}} component ={MathematicsScreen}/> 
+                                <RootStack.Screen name="SecondGameMathematicsScreen" options= {{title : "Segundo juego Matemáticas"}} component ={SecondGameMathematicsScreen}/>  
                             {/* FIN MATEMATICAS  */}
+                            {/* CIENCIAS NATURALES */}
+                                <RootStack.Screen name="NaturalScienceScreen" options= {{title : "Ciencias Naturales"}} component ={NaturalScienceScreen}/> 
+                                <RootStack.Screen name="SecondGameNaturalScienceScreen" options= {{title : "Segundo juego Ciencias Naturales"}} component ={SecondGameNaturalScienceScreen}/>  
+                            {/* FIN CIENCIAS NATURALES */}
+                            {/* CIENCIAS SOCIALES */}
+                                <RootStack.Screen name="SocialScienceScreen" options= {{title : "Ciencias Sociales"}} component ={SocialScienceScreen}/> 
+                                <RootStack.Screen name="SecondGameSocialScienceScreen" options= {{title : "Segundo juego Ciencias Sociales"}} component ={SecondGameSocialScienceScreen}/>  
+                            {/* FIN CIENCIAS SOCIALES */}
                         {/* FIN PANTALLAS ALUMNOS  */}
                     </>
                 )
