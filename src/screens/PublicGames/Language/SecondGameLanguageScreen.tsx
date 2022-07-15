@@ -75,7 +75,7 @@ export const SecondGameLanguageScreen = () => {
                             renderer : <Tail/>,
                             itemsIndex : 0,
                             imageItems : lettersData,
-                            maxNumberItems : lettersData.length
+                            maxNumberItems : lettersData.length-1
                         }
                     }}
                     systems = {[
