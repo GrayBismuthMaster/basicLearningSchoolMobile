@@ -19,10 +19,10 @@ export const PublicContext = createContext({} as PublicContextProps);
 export const PublicProvider = ({children} : any)=>{
     if(Platform.OS === 'ios'){
         const {} = useAudio("longDurationInstrumentalGameLowVolumeCut.mp3");
+    }else{
+        const {} = useAudio("longdurationinstrumentalgamelowvolumecut.mp3");
     }
      
-    const {} = useAudio("longdurationinstrumentalgamelowvolumecut.mp3");
-   
     const [state, dispatch] = useReducer(publicReducer, publicInitialState);
     useEffect(()=>{
         console.log("entra")
