@@ -25,6 +25,7 @@ const publicInitialState : PublicState = {
 export const PublicContext = createContext({} as PublicContextProps);
 export const PublicProvider = ({children} : any)=>{
     const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+    
     if(Platform.OS === 'ios'){
         const {} = useAudio("longDurationInstrumentalGameLowVolumeCut.mp3");
     }else{
@@ -39,35 +40,34 @@ export const PublicProvider = ({children} : any)=>{
 
  
    const registro =async ({ id_estudiante, id_profesor,id_clase} : DetallePartida)=>{
-
-    try{
-        //VERIFICACION USUARIO REGISTRADO O NO
-        const verificacionUsuario = await basicLearningSchoolApi.get(`/usuarios/verifyUser/${id_estudiante}`);
-        console.log("usuario verificado", verificacionUsuario.data);
-        if(verificacionUsuario.data.state){
-            
-            dispatch({
-                type : "createDetallePartida",
-                payload : {
-                    detallePartida : {
-                        calificacion : 0,
-                        id_clase,
-                        id_estudiante,
-                        id_profesor
+        try{
+            //VERIFICACION USUARIO REGISTRADO O NO
+            const verificacionUsuario = await basicLearningSchoolApi.get(`/usuarios/verifyUser/${id_estudiante}`);
+            console.log("usuario verificado", verificacionUsuario.data);
+            if(verificacionUsuario.data.state){
+                
+                dispatch({
+                    type : "createDetallePartida",
+                    payload : {
+                        detallePartida : {
+                            calificacion : 0,
+                            id_clase,
+                            id_estudiante,
+                            id_profesor
+                        }
                     }
-                }
-            })
-            navigation.navigate('PublicHomeScreen',{id_clase, id_estudiante, id_profesor});
+                })
+                navigation.navigate('PublicHomeScreen',{id_clase, id_estudiante, id_profesor});
+            }
+        }catch(error:any){
+            const errorMessage = error.message;
+            console.log("mensaje de error", errorMessage);
+            if(errorMessage)
+            {
+                navigation.navigate('RegisterScreen',{rol : "user",nombres : id_estudiante});
+            }
+            // dispatch({type : 'addError', payload: errorMessage || 'información incorrecta'})
         }
-    }catch(error:any){
-        const errorMessage = error.message;
-        console.log("mensaje de error", errorMessage);
-        if(errorMessage)
-        {
-            navigation.navigate('RegisterScreen',{rol : "user",nombres : id_estudiante});
-        }
-        // dispatch({type : 'addError', payload: errorMessage || 'información incorrecta'})
-    }
    }
    //CHARACTER
    const createCharacter = (character : Character)=>{
