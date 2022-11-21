@@ -89,7 +89,7 @@ export const MainScreen = ({navigation} : Props) => {
                             }}>
                                 <Logo/>
                             </View>
-                            <Text style={loginStyles.title}>Basic Learning School</Text>
+                            <Text style={loginStyles.title}>Escuela 19 de Septiembre</Text>
                             
 
                             {/*Button Login */}

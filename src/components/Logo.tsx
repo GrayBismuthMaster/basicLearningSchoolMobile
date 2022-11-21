@@ -9,7 +9,7 @@ export const Logo = () => {
             }}
         >
             <Image
-                source={require('../../assets/Home/logo.png')}
+                source={require('../../assets/Login/logo.jpg')}
                 style={{
                     width: 120,
                     height: 120,
