@@ -18,7 +18,7 @@ export const HomeScreen = () => {
         <TouchableOpacity
             activeOpacity={0.6}
             onPress = { () =>{
-                navigation.navigate('Reserva de Citas')
+                (navigation as any).navigate('Reserva de Citas')
             }}
         >
             <View style = {styles.card}>
@@ -34,8 +34,7 @@ export const HomeScreen = () => {
         <TouchableOpacity
             activeOpacity={0.6}
             onPress = { () =>{
-                navigation.navigate('Historial de visitas'
-                )
+                (navigation as any).navigate('Historial de visitas')
             }}
         >
             <View style = {styles.card}>
@@ -51,7 +50,7 @@ export const HomeScreen = () => {
         <TouchableOpacity
             activeOpacity={0.6}
             onPress = { () =>{
-                navigation.navigate('Perfil Usuario'
+                (navigation as any).navigate('Perfil Usuario'
                 )
             }}
         >
@@ -68,7 +67,7 @@ export const HomeScreen = () => {
         <TouchableOpacity
             activeOpacity={0.6}
             onPress = { () =>{
-                navigation.navigate('Avance del tratamiento'
+                (navigation as any).navigate('Avance del tratamiento'
                 )
             }}
         >

@@ -15,9 +15,7 @@ export const Logo = () => {
                     height: 120,
                     resizeMode: 'contain',
                 }}
-            >
-                
-            </Image>
+            />
         </View>
     )
 }

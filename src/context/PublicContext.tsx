@@ -70,11 +70,11 @@ export const PublicProvider = ({children} : any)=>{
         }
    }
    //CHARACTER
-   const createCharacter = (character : Character)=>{
+   const registerUser = (user : PublicUsuario)=>{
         dispatch({
-            type : 'createCharacter',
+            type : 'createUser',
             payload : {
-                character
+                user
             }
         })
    }

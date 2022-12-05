@@ -8,7 +8,7 @@ export interface PublicState {
 type PublicAction =  
     | { type: 'registro', payload : {user: PublicUsuario}}
     | {type: 'addError', payload: string}
-    | {type : 'createCharacter', payload : {character : Character}}
+    | {type : 'createUser', payload : {user : PublicUsuario}}
     | {type : 'modifySide', payload : Side}
     | {type : 'createDetallePartida', payload : {detallePartida : DetallePartida}}
 
@@ -33,10 +33,10 @@ export const publicReducer = (state : PublicState, action : PublicAction) : Publ
             ...state,
             user : action.payload.user
         }
-    case 'createCharacter' : {
+    case 'createUser' : {
         return {
             ...state,
-            character : action.payload.character
+            user : action.payload.user
         }
     }
     case 'createDetallePartida' : {

@@ -24,6 +24,7 @@
     "axios": "^0.27.2",
     "react": "18.1.0",
     "react-native": "0.70.4",
+    "react-native-auto-scroll-view": "^1.0.1",
     "react-native-aws3": "^0.0.9",
     "react-native-fs": "^2.20.0",
     "react-native-game-engine": "^1.2.0",
