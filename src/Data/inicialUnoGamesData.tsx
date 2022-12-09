@@ -7,14 +7,14 @@ export const inicialUnoGamesData = [
     },
     {
         id : "2",
-        navigationUrl : 'MathematicsScreen',
+        navigationUrl : 'ColoringMathematicsScreen',
         imageUrl : require('../../assets/Home/matematicas.jpg'),
         nombre : 'Mundo Numérico'
     },
     {
         id : "3",
-        navigationUrl : 'NaturalScienceScreen',
-        imageUrl : require('../../assets/Home/cienciasNaturales.jpg'),
+        navigationUrl : 'ColoringGameScreen',
+        imageUrl : require('../../assets/Home/colorGame/homeScreenColoringImage.jpg'),
         nombre : 'Coloreemos'
     },
 ]

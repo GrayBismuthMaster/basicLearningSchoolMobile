@@ -7,6 +7,7 @@ import { useGetEntidadById } from '../../hooks/useGetEntidadById';
 import { Entidades, Grado, GradosJuego } from '../../interfaces/appInterfaces';
 import { GamesRedirections } from '../../components/GamesRedirections';
 import { inicialUnoGamesData } from '../../Data/inicialUnoGamesData';
+import { inicialDosGamesData } from '../../Data/inicialDosGamesData';
 // export type RootStackParamList = {
 //     PublicScreen: any;
 //   };
@@ -20,7 +21,6 @@ export const PublicHomeScreen = ({navigation,route,}:any) => {
   const {entidadLocal, setEntidadLocal} = useGetEntidadById({id : route.params.id_clase, nombre : Entidades.grados});
 //   const {usuario} = useGetUsuarioById("");
     console.log("entidad obtenidad", (entidadLocal as Grado).nombre);
-    console.log("entidad Interfaz", GradosJuego.INICIAL1);
     
     if((entidadLocal as Grado).nombre === GradosJuego.INICIAL1)
     {      
@@ -29,7 +29,13 @@ export const PublicHomeScreen = ({navigation,route,}:any) => {
                 <>
                     <GamesRedirections navigation={navigation} screensData = {inicialUnoGamesData}/>
                 </>
-                
-            )
+        )
+    }else if((entidadLocal as Grado).nombre === GradosJuego.INICIAL2){
+        console.log('incial 2')
+        return (
+            <>
+                <GamesRedirections navigation={navigation} screensData = {inicialDosGamesData}/>
+            </>
+        )
     }
 }

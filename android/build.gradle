@@ -30,6 +30,18 @@ buildscript {
 
 allprojects {
     repositories {
+        
+        google()
+        exclusiveContent {
+           filter {
+               includeGroup "com.facebook.react"
+           }
+           forRepository {
+               maven {
+                   url "$rootDir/../node_modules/react-native/android"
+               }
+           }
+       }
         maven {
             // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
             url("$rootDir/../node_modules/react-native/android")
@@ -45,7 +57,6 @@ allprojects {
                 excludeGroup "com.facebook.react"
             }
         }
-        google()
-        maven { url 'https://www.jitpack.io' }
+        maven { url "https://www.jitpack.io" }
     }
 }
