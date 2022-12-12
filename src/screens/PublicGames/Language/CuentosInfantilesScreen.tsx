@@ -52,7 +52,7 @@ export const CuentosInfantilesScreen = () => {
         />
         <ScrollView
             contentContainerStyle={styles.contentContainerStyle}
-            ref={scrollRef}
+            ref ={(scrollRef as any)}
             onContentSizeChange={(contentWidth, contentHeight)=>{
                 setContador(contador +1);
                 setEndIndex(contentHeight);
