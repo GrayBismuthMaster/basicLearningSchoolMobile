@@ -34,9 +34,9 @@ import {PublicHomeScreen} from '../screens/Home/PublicHomeScreen';
         import { SecondGameSocialScienceScreen } from '../screens/PublicGames/SocialScience/SecondGameSocialScienceScreen';
 import { ColoringGameScreen } from '../screens/PublicGames/InitialGradeGames/ColoringGame/ColoringGameScreen';
 import { ColoringMathematicsScreen } from '../screens/PublicGames/InitialGradeGames/ColoringMathematicsScreen';
-import { ColorWheelScreen } from '../screens/PublicGames/SecondGrade/ColorWheelScreen';
-import { AnimalAudioScreen } from '../screens/PublicGames/SecondGrade/AnimalAudioScreen';
-import { OrderingVowelsScreen } from '../screens/PublicGames/SecondGrade/OrderingVowelsScreen';
+import { AnimalWheelScreen } from '../screens/PublicGames/SecondGrade/AnimalWheelScreen';
+import { ColorAudioScreen } from '../screens/PublicGames/SecondGrade/ColorAudioScreen';
+import { OrderingVowelsScreen } from '../screens/PublicGames/SecondGrade/OrderingVowelsScreen/OrderingVowelsScreen';
         // END SOCIAL STUDIES 
     // END SUBJECTS 
 // FIN SUBJECT SCREENS 
@@ -59,8 +59,8 @@ import { OrderingVowelsScreen } from '../screens/PublicGames/SecondGrade/Orderin
     CuentosInfantilesScreen : undefined;
     ColoringGameScreen : undefined;
     ColoringMathematicsScreen : undefined;
-    ColorWheelScreen : undefined;
-    AnimalAudioScreen : undefined;
+    AnimalWheelScreen : undefined;
+    ColorAudioScreen : undefined;
     OrderingVowelsScreen : undefined
  }
  const RootStack = createNativeStackNavigator<RootStackParams>();
@@ -113,12 +113,12 @@ export const StackNavigator = () => {
                                 <RootStack.Screen name="NaturalScienceScreen" options= {{title : "Ciencias Naturales"}} component ={NaturalScienceScreen}/> 
                                 <RootStack.Screen name="SecondGameNaturalScienceScreen" options= {{title : "Segundo juego Ciencias Naturales"}} component ={SecondGameNaturalScienceScreen}/>
                                 <RootStack.Screen name="ColoringGameScreen" options= {{title : "Juego de colorear Inicial"}} component ={ColoringGameScreen}/>  
-                                <RootStack.Screen name="AnimalAudioScreen" options= {{title : "Juego de audio de animales"}} component ={AnimalAudioScreen}/>  
+                                <RootStack.Screen name="AnimalWheelScreen" options= {{title : "Juego de ruleta de animales"}} component ={AnimalWheelScreen}/>  
                             {/* FIN CIENCIAS NATURALES */}
                             {/* CIENCIAS SOCIALES */}
                                 <RootStack.Screen name="SocialScienceScreen" options= {{title : "Ciencias Sociales"}} component ={SocialScienceScreen}/> 
                                 <RootStack.Screen name="SecondGameSocialScienceScreen" options= {{title : "Segundo juego Ciencias Sociales"}} component ={SecondGameSocialScienceScreen}/>  
-                                <RootStack.Screen name="ColorWheelScreen" options= {{title : "Juego de elección de colores"}} component ={ColorWheelScreen}/>  
+                                <RootStack.Screen name="ColorAudioScreen" options= {{title : "Juego de elección de colores"}} component ={ColorAudioScreen}/>  
                                 
                             {/* FIN CIENCIAS SOCIALES */}
                         {/* FIN PANTALLAS ALUMNOS  */}

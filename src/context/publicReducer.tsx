@@ -1,9 +1,11 @@
 import React from 'react'
-import { Character, DetallePartida, PublicUsuario, Side } from '../interfaces/appInterfaces'
+import { Character, DetallePartida, EstadoOrdenaVocalesGame, PublicUsuario, Side } from '../interfaces/appInterfaces'
 export interface PublicState {
     user : PublicUsuario | null;
     character : Character | null;
     detallePartida : DetallePartida | null;
+    estadoVocales : EstadoOrdenaVocalesGame | null;
+    
 }
 type PublicAction =  
     | { type: 'registro', payload : {user: PublicUsuario}}
@@ -11,6 +13,7 @@ type PublicAction =
     | {type : 'createUser', payload : {user : PublicUsuario}}
     | {type : 'modifySide', payload : Side}
     | {type : 'createDetallePartida', payload : {detallePartida : DetallePartida}}
+    | {type : 'modifyOrdenaVocalesGame', payload : {estadoVocales : EstadoOrdenaVocalesGame}}
 
 export const publicReducer = (state : PublicState, action : PublicAction) : PublicState => {
   switch (action.type) {
@@ -43,6 +46,13 @@ export const publicReducer = (state : PublicState, action : PublicAction) : Publ
         return {
             ...state, 
             detallePartida : action.payload.detallePartida
+        }
+    }
+
+    case 'modifyOrdenaVocalesGame' : {
+        return {
+            ...state,
+            estadoVocales : action.payload.estadoVocales
         }
     }
     // case 'logout' :

@@ -168,3 +168,12 @@ export interface GamesRedirectionsProps {
 //     navigationUrl : string,
 //     imageUrl : ImageSourcePropType
 // }
+
+//HANDLER ORDENA VOCALES GAME
+export interface EstadoOrdenaVocalesGame {
+    letterA? : boolean;
+    letterE? : boolean;
+    letterI? : boolean;
+    letterO? : boolean;
+    letterU? : boolean;
+}

@@ -21,7 +21,7 @@ export const useAudio = (initialAudio : string) => {
       sound.play();
         
       return () => {
-        console.log("startup")      
+        sound.stop();      
       };
     }, [modifiedAudio])
 

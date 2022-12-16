@@ -1,8 +1,11 @@
 import React, {useRef, useState, useEffect} from 'react'
 import {Text, ScrollView, Dimensions, Image} from 'react-native'
 import { GradientBackground } from '../../../components/GradientBackground'
+import { useAudio } from '../../../hooks/useAudio'
 
 export const CuentosInfantilesScreen = () => {
+
+  const {} = useAudio("caperucita.mp3")
     let height = Dimensions.get("screen").height;
     console.log(height);
     const scrollRef = useRef();
@@ -12,7 +15,7 @@ export const CuentosInfantilesScreen = () => {
   const [testArray, setTestArray] = useState(new Array(20).fill('lorem ipsum'));
   const [contador, setContador] = useState(0);
   const [endIndex, setEndIndex] = useState(0);
-
+  
   const styles = {
     contentContainerStyle: {
       flexGrow: 1,
@@ -21,15 +24,15 @@ export const CuentosInfantilesScreen = () => {
       backgroundColor: 'transparent',
       padding: 20,
       marginVertical: 10,
-      fontSize : 30,
+      fontSize : 27,
       marginHorizontal : 25,
-      color : 'black'
+      color : 'rgba(255,255,255,0.8)'
     },
   };
     useEffect(() => {
         if(contador< endIndex-400){
             setTimeout(()=>{
-                setContador(contador+1);
+                setContador(contador+2);
             },50);
             (scrollRef as any).current.scrollTo({y:contador, animated:true});
             

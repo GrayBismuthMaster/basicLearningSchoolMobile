@@ -2,7 +2,7 @@ import React, {createContext, useReducer, useEffect} from 'react'
 import AsyncStorage  from '@react-native-async-storage/async-storage';
 
 import basicLearningSchoolApi from '../api/basicLearningSchoolApi';
-import { PublicUsuario, LoginResponse, PublicData, Character, DetallePartida} from '../interfaces/appInterfaces'
+import { PublicUsuario, LoginResponse, PublicData, Character, DetallePartida, EstadoOrdenaVocalesGame} from '../interfaces/appInterfaces'
 import { publicReducer, PublicState} from './publicReducer';
 import { useAudio } from '../hooks/useAudio';
 import { Platform } from 'react-native';
@@ -11,7 +11,9 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 type PublicContextProps = {
     user: PublicUsuario | null;
+    estadoVocales : EstadoOrdenaVocalesGame |null;
     registro : (registerData : DetallePartida) => void
+    handlerOrdenaVocalesGame:( estadoVocales :EstadoOrdenaVocalesGame)=> void
 }
 export type RootStackParamList = {
     RegisterScreen: any;
@@ -20,7 +22,8 @@ export type RootStackParamList = {
 const publicInitialState : PublicState = {
     user : null,
     character : null,
-    detallePartida : null
+    detallePartida : null,
+    estadoVocales : null
 }
 export const PublicContext = createContext({} as PublicContextProps);
 export const PublicProvider = ({children} : any)=>{
@@ -78,6 +81,16 @@ export const PublicProvider = ({children} : any)=>{
             }
         })
    }
+   const handlerOrdenaVocalesGame = (estadoVocales:EstadoOrdenaVocalesGame)=>{
+    console.log(estadoVocales);
+    console.log('entra')
+        dispatch({
+            type : 'modifyOrdenaVocalesGame',
+            payload : {
+                estadoVocales
+            }
+        })
+   }
 
 //    const  characterSides = async (character : Character)=> {
 //         dispatch({
@@ -98,7 +111,8 @@ export const PublicProvider = ({children} : any)=>{
     return (
         <PublicContext.Provider value = {{
             ...state,
-            registro
+            handlerOrdenaVocalesGame,
+            registro,
         }}>
             {children}
         </PublicContext.Provider>
