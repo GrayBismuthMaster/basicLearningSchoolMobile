@@ -8,6 +8,7 @@ import { Entidades, Grado, GradosJuego } from '../../interfaces/appInterfaces';
 import { GamesRedirections } from '../../components/GamesRedirections';
 import { inicialUnoGamesData } from '../../Data/inicialUnoGamesData';
 import { inicialDosGamesData } from '../../Data/inicialDosGamesData';
+import { primeroEGBGamesData } from '../../Data/primeroEGBGamesData';
 // export type RootStackParamList = {
 //     PublicScreen: any;
 //   };
@@ -35,6 +36,13 @@ export const PublicHomeScreen = ({navigation,route,}:any) => {
         return (
             <>
                 <GamesRedirections navigation={navigation} screensData = {inicialDosGamesData}/>
+            </>
+        )
+    }else if((entidadLocal as Grado).nombre === GradosJuego.PRIMERO_EGB){
+        console.log('Primero EGB')
+        return (
+            <>
+                <GamesRedirections navigation={navigation} screensData = {primeroEGBGamesData}/>
             </>
         )
     }

@@ -37,6 +37,8 @@ import { ColoringMathematicsScreen } from '../screens/PublicGames/InitialGradeGa
 import { AnimalWheelScreen } from '../screens/PublicGames/SecondGrade/AnimalWheelScreen';
 import { ColorAudioScreen } from '../screens/PublicGames/SecondGrade/ColorAudioScreen';
 import { OrderingVowelsScreen } from '../screens/PublicGames/SecondGrade/OrderingVowelsScreen/OrderingVowelsScreen';
+import { VowelsSelectScreen } from '../screens/PublicGames/highSchoolGames/firstEGBGames/VowelsSelectScreen';
+import { AbecedarySelectScreen } from '../screens/PublicGames/highSchoolGames/firstEGBGames/AbecedarySelectScreen';
         // END SOCIAL STUDIES 
     // END SUBJECTS 
 // FIN SUBJECT SCREENS 
@@ -61,7 +63,9 @@ import { OrderingVowelsScreen } from '../screens/PublicGames/SecondGrade/Orderin
     ColoringMathematicsScreen : undefined;
     AnimalWheelScreen : undefined;
     ColorAudioScreen : undefined;
-    OrderingVowelsScreen : undefined
+    OrderingVowelsScreen : undefined;
+    VowelsSelectScreen : undefined;
+    AbecedarySelectScreen : undefined;
  }
  const RootStack = createNativeStackNavigator<RootStackParams>();
 export const StackNavigator = () => {
@@ -101,7 +105,8 @@ export const StackNavigator = () => {
                                 <RootStack.Screen name="SecondGameLanguageScreen" options= {{title : "Segundo juego lenguaje"}} component ={SecondGameLanguageScreen}/>
                                 <RootStack.Screen name="CuentosInfantilesScreen" options= {{title : "Juego lenguaje"}} component ={CuentosInfantilesScreen}/>
                                 <RootStack.Screen name="OrderingVowelsScreen" options= {{title : "Juego de ordenamiento de vocales"}} component ={OrderingVowelsScreen}/>
-                                  
+                                <RootStack.Screen name="VowelsSelectScreen" options= {{title : "Juego de selección de vocales"}} component ={VowelsSelectScreen}/>
+                                <RootStack.Screen name="AbecedarySelectScreen" options= {{title : "Juego de selección de letras"}} component ={AbecedarySelectScreen}/>
                             {/* FIN LENGUAJE  */}
                             {/* MATEMATICAS */}
                                 <RootStack.Screen name="MathematicsScreen" options= {{title : "Matemáticas"}} component ={MathematicsScreen}/> 
