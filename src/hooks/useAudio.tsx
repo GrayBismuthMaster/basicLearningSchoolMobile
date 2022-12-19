@@ -1,11 +1,38 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Sound from 'react-native-sound';
+import {AppState} from 'react-native';
 
 export const useAudio = (initialAudio : string) => {
     const [audio, setAudio] = useState(initialAudio);
     const [modifiedAudio, setModifiedAudio]= useState(0)
+    // APP STATE
+    const appState = useRef(AppState.currentState);
+    const [appStateVisible, setAppStateVisible] = useState(appState.current);
 
     useEffect(() => {
+
+      //APP STATE
+      const subscription = AppState.addEventListener("change", nextAppState => {
+        if (
+          appState.current.match(/inactive|background/) &&
+          nextAppState === "active"
+        ) {
+          console.log("App has come to the foreground!");
+          
+        }
+  
+        appState.current = nextAppState;
+        setAppStateVisible(appState.current);
+        console.log("AppState", appState.current);
+        if(appState.current === 'background'){
+          sound.pause();
+        }
+        if(appState.current === 'active'){
+          sound.play()
+        }
+      });
+
+
       const sound = new Sound(
         audio,
         Sound.MAIN_BUNDLE,
@@ -19,9 +46,12 @@ export const useAudio = (initialAudio : string) => {
       );
       // The play dispatcher
       sound.play();
-        
+      console.log(sound.getVolume());
+      sound.setVolume(0.4);
+      console.log(sound.getVolume());
       return () => {
-        sound.stop();      
+        sound.stop();   
+        subscription.remove();   
       };
     }, [modifiedAudio])
 

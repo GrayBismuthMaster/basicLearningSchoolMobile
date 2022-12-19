@@ -17,13 +17,13 @@ export const MathematicsScreen = () => {
             console.log("cleanup")
         };
     }, [])
-    const navigation = useNavigation<NativeStackNavigationProp<any>>();
+    // const navigation = useNavigation<NativeStackNavigationProp<any>>();
     
     const modificarAudio = (nuevoAudio : string) =>{
         setNuevoAudio(nuevoAudio);
-        if(nuevoAudio === "success.mp3"){
-            navigation.navigate("SecondGameMathematicsScreen");
-        }
+        // if(nuevoAudio === "success.mp3"){
+        //     navigation.navigate("SecondGameMathematicsScreen");
+        // }
     }
     
   return (

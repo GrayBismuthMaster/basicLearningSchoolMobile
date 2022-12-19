@@ -9,6 +9,7 @@ import { GamesRedirections } from '../../components/GamesRedirections';
 import { inicialUnoGamesData } from '../../Data/inicialUnoGamesData';
 import { inicialDosGamesData } from '../../Data/inicialDosGamesData';
 import { primeroEGBGamesData } from '../../Data/primeroEGBGamesData';
+import {segundoEGBGamesData} from '../../Data/segundoEGBGamesData';
 // export type RootStackParamList = {
 //     PublicScreen: any;
 //   };
@@ -43,6 +44,12 @@ export const PublicHomeScreen = ({navigation,route,}:any) => {
         return (
             <>
                 <GamesRedirections navigation={navigation} screensData = {primeroEGBGamesData}/>
+            </>
+        )
+    }else{
+        return (
+            <>
+                <GamesRedirections navigation={navigation} screensData = {segundoEGBGamesData}/>
             </>
         )
     }

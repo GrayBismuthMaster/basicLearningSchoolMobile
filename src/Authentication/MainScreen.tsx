@@ -75,7 +75,7 @@ export const MainScreen = ({navigation} : Props) => {
                             <View style = {{
                                 backgroundColor: 'transparent',
                                 borderRadius: 60,
-                                shadowColor: "#000",
+                                shadowColor: "rgba(255,255,255,0.5)",
                                 shadowOffset: {
                                     width: 0,
                                     height: 12,
@@ -89,7 +89,7 @@ export const MainScreen = ({navigation} : Props) => {
                             }}>
                                 <Logo/>
                             </View>
-                            <Text style={loginStyles.title}>Escuela 19 de Septiembre</Text>
+                            <Text style={loginStyles.title}>Unidad Educativa 19 de Septiembre</Text>
                             
 
                             {/*Button Login */}
